@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for character set, compatibility, and viewport settings -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Link to an external stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    
+    <!-- Link to Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/caa8f5a8ca.js" crossorigin="anonymous"></script>
+    
+    <!-- Link to Math.js library for mathematical calculations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js" integrity="sha512-BbVEDjbqdN3Eow8+empLMrJlxXRj5nEitiCAK5A1pUr66+jLVejo3PmjIaucRnjlB0P9R3rBUs3g5jXc8ti+fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js" integrity="sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- Title of the webpage -->
+    <title>Calculator</title>
+  </head>
+  <body>
+    <!-- Calculator container with display and keys -->
+    <div class="calculator" id="calc">
+        <!-- Calculator display input box -->
+        <div class="calculator_display">
+            <input type="text" id="inputBox" placeholder="0" />
+        </div>
+        <!-- Calculator keys divided into different sections -->
+        <div class="calculator_keys">
+            <!-- Section for AC, DEL, and parentheses -->
+            <div>
+                <button class="button operator" id="clear" onclick="clr()">AC</button>
+                <button class="button operator" id="delete" onclick="dlt()">DEL</button>
+                <button class="button operator" id="open-brkt" onclick="disp( '(' )">(</button>
+                <button class="button operator" id="close-brkt" onclick="disp( ')' )">)</button>
+            </div>
+            <!-- Section for x^2, x^3, %, and / -->
+            <div>
+                <button class="button operator" id="square" value="x*x" onclick="disp('^2')">x<sup>2</sup></button>
+                <button class="button operator" id="cube" value="x*x*x" onclick="disp('^3')">x<sup>3</sup></button>
+                <button class="button operator" id="modulo" value="%" onclick="disp('%')" onkeydown="myFunc(e)">%</button>
+                <button class="button operator" id="divide" value="/" onclick="disp('/')" onkeydown="myFunc(e)">/</button>
+            </div>
+            <!-- Section for numbers 7, 8, 9, and * -->
+            <div>
+                <button class="button" value="7" onclick="disp('7')" onkeydown="myFunc(e)">7</button>
+                <button class="button" value="8" onclick="disp('8')" onkeydown="myFunc(e)">8</button>
+                <button class="button" value="9" onclick="disp('9')" onkeydown="myFunc(e)">9</button>
+                <button class="button operator" id="multiply" value="*" onclick="disp('*')" onkeydown="myFunc(e)">*</button>
+            </div>
+            <!-- Section for numbers 4, 5, 6, and - -->
+            <div>
+                <button class="button" value="4" onclick="disp('4')" onkeydown="myFunc(e)">4</button>
+                <button class="button" value="5" onclick="disp('5')" onkeydown="myFunc(e)">5</button>
+                <button class="button" value="6" onclick="disp('6')" onkeydown="myFunc(e)">6</button>
+                <button class="button operator" id="subtract" value="-" onclick="disp('-')" onkeydown="myFunc(e)">-</button>
+            </div>
+            <!-- Section for numbers 1, 2, 3, and + -->
+            <div>
+                <button class="button" value="1" onclick="disp('1')" onkeydown="myFunc(e)">1</button>
+                <button class="button" value="2" onclick="disp('2')" onkeydown="myFunc(e)">2</button>
+                <button class="button" value="3" onclick="disp('3')" onkeydown="myFunc(e)">3</button>
+                <button class="button operator" id="add" value="+" onclick="disp('+')" onkeydown="myFunc(e)">+</button>
+            </div>
+            <!-- Section for 00, 0, ., and = -->
+            <div>
+                <button class="button" value="00" onclick="disp('00')" onkeydown="myFunc(e)">00</button>
+                <button class="button" value="0" onclick="disp('0')" onkeydown="myFunc(e)">0</button>
+                <button class="button" id="decimal" value="." onclick="disp('.')" onkeydown="myFunc(e)">.</button>
+                <button class="button equalBtn" id="calculate" value="=" onclick="solve()">=</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to an external JavaScript file for functionality -->
+    <script src="script.js"></script>
+  </body>
+</html>
